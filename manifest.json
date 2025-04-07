@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Anti-Écoles - Offres propres",
+  "version": "1.0",
+  "description": "Supprime automatiquement les offres d’écoles sur Hellowork, Welcome to the Jungle et Indeed pour ne garder que les vraies offres d'emploi.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.hellowork.com/*",
+    "https://candidat.hellowork.com/*",
+    "*://*.welcometothejungle.com/*",
+    "*://*.indeed.com/*",
+    "*://*.indeed.fr/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    },
+    "default_title": "Anti-Écoles : Filtre les offres de formation"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.hellowork.com/*",
+        "https://candidat.hellowork.com/*",
+        "https://*.welcometothejungle.com/*",
+        "https://*.indeed.com/*",
+        "https://*.indeed.fr/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icons/icon.png"
+  }
+}

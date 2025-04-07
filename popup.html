@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anti-Écoles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Anti-Écoles</h1>
+  <button id="modeToggle" class="mode-btn">🌙</button>
+  <!-- Message d'erreur ou info -->
+  <p id="statusMessage" style="color: red; display: none;"></p>
+
+  <!-- Ajout de mot-clé -->
+  <div>
+    <input id="newWord" type="text" placeholder="Ajouter un mot-clé..." />
+    <button id="addBtn">Ajouter</button>
+  </div>
+
+  <!-- Liste des mots en blacklist -->
+  <ul id="blacklist"></ul>
+
+  <!-- Activation du filtre -->
+  <label>
+    <input type="checkbox" id="filterToggle" />
+    Activer le filtre
+  </label>
+
+  <hr />
+
+  <!-- Import/Export JSON -->
+  <button id="exportBtn">📤 Exporter JSON</button>
+  <input type="file" id="importInput" />
+
+  <!-- Stats -->
+  <p id="statistiques" style="color: green; font-weight: bold;"></p>
+
+  <!-- Options supplémentaires -->
+  <button id="btnReload">🔄 Recharger le filtre</button>
+  <button id="exportCSVBtn">⬇️ Exporter CSV</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
